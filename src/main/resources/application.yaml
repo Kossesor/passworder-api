@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+spring:
+  jpa:
+    hibernate.ddl-auto: validate
+    show-sql: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://localhost:3306/passworder?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password:
+  mail:
+    host: smtp.mail.ru
+    username: sd103e@mail.ru
+    password: xzl1978
+    port: 465
+    protocol: smtps
+
+mail:
+  debug: true
+  mime:
+    address:
+      strict: false

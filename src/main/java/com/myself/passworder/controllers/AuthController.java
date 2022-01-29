@@ -1,7 +1,5 @@
 package com.myself.passworder.controllers;
 
-import com.myself.passworder.models.User;
-import com.myself.passworder.services.UserService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,16 +11,14 @@ import javax.validation.constraints.NotBlank;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auth")
 public class AuthController {
-    private final UserService userService;
-
     @PostMapping("/login")
     public Response login(@RequestBody @Valid LoginRequest form) {
         System.out.println(form);
-        User user = userService.getUserByUsername(form.username);
         return new Response("aaa", "bbb");
     }
 

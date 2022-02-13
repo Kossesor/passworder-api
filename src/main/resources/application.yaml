@@ -4,7 +4,7 @@ server:
     context-path: /api
 spring:
   jpa:
-    hibernate.ddl-auto: create
+    hibernate.ddl-auto: create-drop
     show-sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL5Dialect

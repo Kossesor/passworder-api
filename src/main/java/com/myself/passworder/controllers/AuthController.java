@@ -28,6 +28,7 @@ public class AuthController {
     @GetMapping("/user")
     public Map<String, Object> user() {
         Map<String, Object> user = new HashMap<>();
+        user.put("id", 1);
         user.put("name", "vasya");
         user.put("admin", true);
         return user;

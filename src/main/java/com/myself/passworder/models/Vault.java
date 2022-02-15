@@ -21,11 +21,6 @@ public class Vault {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
-    @Size(min = 3, max = 50)
-    @Column(length = 50, nullable = false)
-    private String name;
-
     @Lob
     @NotNull
     @Size(min = 3, max = 50)

@@ -1,13 +1,11 @@
 package com.myself.passworder.controllers;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.myself.passworder.requests.LoginRequest;
+import com.myself.passworder.requests.LoginResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,18 +15,18 @@ import java.util.Map;
 @RequestMapping("/auth")
 public class AuthController {
     @PostMapping("/login")
-    public Response login(@RequestBody @Valid LoginRequest form) {
+    public LoginResponse login(@RequestBody @Valid LoginRequest form) {
         System.out.println(form);
-        return new Response("aaa", "bbb");
+        return new LoginResponse("aaa", "bbb");
     }
 
     @PostMapping("/refresh")
-    public Response refresh() {
-        return new Response("xxx", "yyy");
+    public LoginResponse refresh() {
+        return new LoginResponse("xxx", "yyy");
     }
 
     @GetMapping("/user")
-    public Map user() {
+    public Map<String, Object> user() {
         Map<String, Object> user = new HashMap<>();
         user.put("name", "vasya");
         user.put("admin", true);
@@ -38,23 +36,5 @@ public class AuthController {
     @PostMapping("/logout")
     public void logout() {
         System.out.println("logout");
-    }
-
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    private static class LoginRequest {
-        @NotBlank
-        String username;
-        @NotBlank
-        String password;
-    }
-
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    private static class Response {
-        String access_token;
-        String refresh_token;
     }
 }

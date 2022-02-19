@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.myself</groupId>
-    <artifactId>passworder</artifactId>
+    <artifactId>passworder-api</artifactId>
     <version>1</version>
     <name>passworder-api</name>
     <description>API for Passworder with NUXT</description>

@@ -1,19 +1,21 @@
 package com.myself.passworder.controllers;
 
+import com.myself.passworder.models.User;
 import com.myself.passworder.requests.LoginRequest;
 import com.myself.passworder.requests.LoginResponse;
+import com.myself.passworder.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.HashMap;
-import java.util.Map;
 
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/auth")
 public class AuthController {
+    private final UserService userService;
+
     @PostMapping("/login")
     public LoginResponse login(@RequestBody @Valid LoginRequest form) {
         System.out.println(form);
@@ -26,12 +28,8 @@ public class AuthController {
     }
 
     @GetMapping("/user")
-    public Map<String, Object> user() {
-        Map<String, Object> user = new HashMap<>();
-        user.put("id", 1);
-        user.put("name", "vasya");
-        user.put("admin", true);
-        return user;
+    public User user() {
+        return userService.getUserById(1L);
     }
 
     @PostMapping("/logout")

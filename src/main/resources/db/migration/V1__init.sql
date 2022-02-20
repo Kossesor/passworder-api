@@ -28,7 +28,7 @@ CREATE TABLE users
 CREATE TABLE vault
 (
     id   BIGINT AUTO_INCREMENT NOT NULL,
-    data BLOB                  NOT NULL,
+    data TEXT                  NOT NULL,
     CONSTRAINT pk_vault PRIMARY KEY (id)
 );
 

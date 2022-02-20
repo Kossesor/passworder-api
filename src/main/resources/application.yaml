@@ -4,14 +4,14 @@ server:
     context-path: /api
 spring:
   jpa:
-    hibernate.ddl-auto: create-drop
+    hibernate.ddl-auto: validate
     show-sql: true
     open-in-view: false
     database-platform: org.hibernate.dialect.MySQL5Dialect
   datasource:
     url: jdbc:mysql://localhost:3306/passworder?createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root
-    password:
+    password: root
   mail:
     host: smtp.mail.ru
     username: sd103e@mail.ru

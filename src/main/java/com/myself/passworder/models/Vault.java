@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.sql.Blob;
 
 @Data
 @Entity
@@ -21,9 +20,8 @@ public class Vault {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Lob
     @NotNull
     @Size(min = 3, max = 50)
-    @Column(length = 50, nullable = false)
-    private Blob data;
+    @Column(length = 50, nullable = false, columnDefinition = "text")
+    private String data;
 }

@@ -20,6 +20,6 @@ public class VaultController {
 
     @GetMapping("/{id}")
     public String SendVault(@PathVariable Long id) {
-        return String.valueOf(vaultService.getVaultDataById(id));
+        return vaultService.getVaultDataById(id);
     }
 }

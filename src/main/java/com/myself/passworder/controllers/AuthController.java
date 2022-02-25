@@ -18,7 +18,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public LoginResponse login(@RequestBody @Valid LoginRequest form) {
-        System.out.println(form);
         return new LoginResponse("aaa", "bbb");
     }
 

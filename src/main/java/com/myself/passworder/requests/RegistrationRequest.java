@@ -10,12 +10,14 @@ import javax.validation.constraints.NotNull;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegistrationResponse {
+public class RegistrationRequest {
     @NotNull
     @NotBlank
     String username;
     @NotNull
     @NotBlank
+    String email;
+    @NotNull
+    @NotBlank
     String password;
-
 }

@@ -7,14 +7,14 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-//    FIXME we need jrt
+// FIXME we need jrt
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginRequest {
     @NotNull
     @NotBlank
-    String username;
+    String login;
     @NotNull
     @NotBlank
     String password;

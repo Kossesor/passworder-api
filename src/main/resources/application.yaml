@@ -15,7 +15,7 @@ spring:
   mail:
     host: smtp.mail.ru
     username: sd103e@mail.ru
-    password: xzl1978
+    password: 191zl708L
     port: 465
     protocol: smtps
 

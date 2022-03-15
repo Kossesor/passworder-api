@@ -27,8 +27,9 @@ public class RegistrationController {
     }
 
     @GetMapping("/activation/{code}")
-    public String activation(@PathVariable String code) {
-        return userService.activateUser(code) ? "User successfully activated" : "Activation code is not found";
+    public boolean activation(@PathVariable String code) {
+        System.out.println(code);
+        return userService.activateUser(code);
     }
     @GetMapping("/test")
     public User user() {

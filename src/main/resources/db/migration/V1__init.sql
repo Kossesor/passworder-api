@@ -1,13 +1,3 @@
-CREATE TABLE passwords
-(
-    id       BIGINT AUTO_INCREMENT NOT NULL,
-    title    VARCHAR(50)           NOT NULL,
-    login    VARCHAR(50)           NOT NULL,
-    password VARCHAR(60)           NOT NULL,
-    note     VARCHAR(204)          NULL,
-    CONSTRAINT pk_passwords PRIMARY KEY (id)
-);
-
 CREATE TABLE user_role
 (
     user_id BIGINT       NOT NULL,

@@ -33,7 +33,6 @@ public class RegistrationController {
 
     @GetMapping("/activation/{code}")
     public boolean activation(@PathVariable String code) {
-        System.out.println(code);
         return userService.activateUser(code);
     }
 

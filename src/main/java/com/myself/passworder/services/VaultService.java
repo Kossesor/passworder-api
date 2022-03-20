@@ -10,6 +10,6 @@ public class VaultService {
     private final VaultRepository vaultRepository;
 
     public final String getVaultDataById(Long id) {
-        return String.valueOf(vaultRepository.getVaultById(id).getData());
+        return vaultRepository.getVaultById(id).getData();
     }
 }

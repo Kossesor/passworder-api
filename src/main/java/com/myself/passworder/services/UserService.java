@@ -43,7 +43,7 @@ public class UserService implements UserDetailsService {
 
         if (!user.getEmail().isEmpty()) {
             String massage = String.format(
-                    "Hello, %s! \n Go here http://localhost:8080/activation/%s",
+                    "Hello, %s! \n Go here http://localhost:3000/activation/%s",
                     user.getUsername(),
                     user.getActivationCode()
             );
@@ -68,7 +68,7 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    public boolean activateUser(String code) {
+    public boolean  activateUser(String code) {
         User user = userRepository.findByActivationCode(code);
 
         if (user == null) return false;

@@ -1,7 +1,7 @@
 package com.myself.passworder.config;
 
-import com.myself.passworder.services.PasswordEncoder;
 import com.myself.passworder.services.UserService;
+import com.myself.passworder.utils.PasswordEncoder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

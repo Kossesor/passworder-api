@@ -1,4 +1,4 @@
-package com.myself.passworder.services;
+package com.myself.passworder.utils;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;

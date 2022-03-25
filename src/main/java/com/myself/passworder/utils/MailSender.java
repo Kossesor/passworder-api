@@ -1,4 +1,4 @@
-package com.myself.passworder.services;
+package com.myself.passworder.utils;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

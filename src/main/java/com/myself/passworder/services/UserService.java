@@ -1,5 +1,7 @@
 package com.myself.passworder.services;
 
+import com.myself.passworder.utils.MailSender;
+import com.myself.passworder.utils.PasswordEncoder;
 import com.myself.passworder.exeptions.UserEmailAlreadyExistException;
 import com.myself.passworder.exeptions.UsernameAlreadyExistException;
 import com.myself.passworder.models.Role;

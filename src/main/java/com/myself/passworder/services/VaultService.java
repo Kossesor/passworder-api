@@ -5,14 +5,14 @@ import com.myself.passworder.repositories.VaultRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class VaultService {
     private final VaultRepository vaultRepository;
 
-    public String getVaultDataById(Long id) {
-        Vault vault = vaultRepository.getVaultById(id);
-
-        return vault == null ? "" : vault.getData();
+    public List<Vault> getVaultDataByParentId(Long id) {
+        return vaultRepository.getVaultsByPid(id);
     }
 }

@@ -17,4 +17,9 @@ public class VaultController {
     public List<Vault> SendVault(@PathVariable Long id) {
         return vaultService.getVaultDataByParentId(id);
     }
+
+    @PostMapping("/create")
+    public void CreateVault(Object encryptedData) {
+        System.out.println(encryptedData);
+    }
 }

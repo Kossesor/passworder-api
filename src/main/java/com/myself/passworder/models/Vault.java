@@ -21,6 +21,15 @@ public class Vault {
     private Long id;
 
     @NotNull
+    @Column(nullable = false)
+    private Long pid;
+
+    @NotNull
+    @Size(min = 3)
+    @Column(nullable = false)
+    private String title;
+
+    @NotNull
     @Size(min = 3, max = 50)
     @Column(length = 50, nullable = false, columnDefinition = "text")
     private String data;

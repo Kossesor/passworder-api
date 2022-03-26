@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/vault")
+@RequestMapping("/vaults")
 public class VaultController {
     private final VaultService vaultService;
 

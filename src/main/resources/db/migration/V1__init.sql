@@ -17,10 +17,10 @@ CREATE TABLE users
 
 CREATE TABLE vault
 (
-    id        BIGINT AUTO_INCREMENT NOT NULL,
-    pid BIGINT                NOT NULL,
-    title     VARCHAR(255)          NOT NULL,
-    data      TEXT                  NOT NULL,
+    id             BIGINT AUTO_INCREMENT NOT NULL,
+    pid            BIGINT                NOT NULL,
+    title          VARCHAR(255)          NOT NULL,
+    encrypted_data TEXT                  NOT NULL,
     CONSTRAINT pk_vault PRIMARY KEY (id)
 );
 

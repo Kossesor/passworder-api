@@ -32,5 +32,5 @@ public class Vault {
     @NotNull
     @Size(min = 3, max = 50)
     @Column(length = 50, nullable = false, columnDefinition = "text")
-    private String data;
+    private String encryptedData;
 }

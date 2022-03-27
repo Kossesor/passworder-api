@@ -15,4 +15,12 @@ public class VaultService {
     public List<Vault> getVaultDataByParentId(Long id) {
         return vaultRepository.getVaultsByPid(id);
     }
+
+    public boolean createVault(Vault vault) {
+        List<Vault> duplicates = vaultRepository.getVaultsByTitle(vault.getTitle());
+
+        if (duplicates.size() > 0) return false;
+        vaultRepository.save(vault);
+        return true;
+    }
 }

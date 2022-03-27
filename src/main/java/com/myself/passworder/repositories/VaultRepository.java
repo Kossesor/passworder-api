@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface VaultRepository extends JpaRepository<Vault, Long> {
     List<Vault> getVaultsByPid(Long id);
+
+    List<Vault> getVaultsByTitle(String title);
 }

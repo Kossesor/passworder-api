@@ -19,7 +19,8 @@ public class VaultController {
     }
 
     @PostMapping("/create")
-    public void CreateVault(Object encryptedData) {
-        System.out.println(encryptedData);
+    public boolean CreateVault(@RequestBody Vault vault) {
+        System.out.println(vault);
+        return vaultService.createVault(vault);
     }
 }

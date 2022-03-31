@@ -18,6 +18,11 @@ public class VaultController {
         return vaultService.getVaultDataByParentId(id);
     }
 
+    @PostMapping("/{id}")
+    public List<Vault> SetVault(Vault data) {
+        return vaultService.setVaultData(data);
+    }
+
     @PostMapping("/create")
     public boolean CreateVault(@RequestBody Vault vault) {
         System.out.println(vault);

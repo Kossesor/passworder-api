@@ -12,12 +12,23 @@ import java.util.List;
 public class VaultService {
     private final VaultRepository vaultRepository;
 
+//    public List<Vault> setVaultData(Vault vault) {
+//        vaultRepository.save(vault);
+//        return vaultRepository.getVaultsByPid(1L);
+//    }
+
     public List<Vault> getVaultDataByParentId(Long id) {
         return vaultRepository.getVaultsByPid(id);
     }
-    public List<Vault> setVaultData(Vault vault) {
+
+    public boolean deleteVaultData(Long  id) {
+        vaultRepository.deleteById(id);
+        return true;
+    }
+
+    public boolean updateVaultData(Vault vault ) {
         vaultRepository.save(vault);
-        return vaultRepository.getVaultsByPid(1L);
+        return true;
     }
 
     public boolean createVault(Vault vault) {

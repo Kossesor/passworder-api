@@ -13,14 +13,12 @@ spring:
     username: root
     password: root
   mail:
-    host: smtp.mail.ru
-    username: sd103e@mail.ru
-    password: 191zl708L
-    port: 465
+    host: smtp.gmail.com
+    username: simon290344@gmail.com
+    password: dvvp swlb scae bkks
+    port: 587
     protocol: smtps
-
-mail:
-  debug: true
+    debug: true
   mime:
     address:
       strict: false

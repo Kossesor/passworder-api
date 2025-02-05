@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 @Table(name = "vault")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Vault {
+public class  Vault {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,7 +30,7 @@ public class Vault {
     private String title;
 
     @NotNull
-    @Size(min = 3, max = 50)
-    @Column(length = 50, nullable = false, columnDefinition = "text")
+    @Size(min = 3)
+    @Column(nullable = false, columnDefinition = "text")
     private String encryptedData;
 }

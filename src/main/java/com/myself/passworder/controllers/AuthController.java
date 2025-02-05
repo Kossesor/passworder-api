@@ -5,6 +5,7 @@ import com.myself.passworder.requests.LoginRequest;
 import com.myself.passworder.requests.LoginResponse;
 import com.myself.passworder.services.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -16,8 +17,8 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/login")
-    public LoginResponse login(@RequestBody @Valid LoginRequest form) {
-        return new LoginResponse("aaa", "bbb");
+    public UserDetails login(@RequestBody @Valid LoginRequest form) {
+        return userService.loadUserByUsername(form.getLogin());
     }
 
     @PostMapping("/refresh")
@@ -28,6 +29,11 @@ public class AuthController {
     @GetMapping("/user")
     public User user() {
         return userService.getUserById(1L);
+    }
+
+    @GetMapping("/session")
+    public String session() {
+        return "token";
     }
 
     @PostMapping("/logout")

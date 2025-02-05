@@ -70,8 +70,9 @@ public class UserService implements UserDetailsService {
         return user;
     }
 
-    public boolean  activateUser(String code) {
-        User user = userRepository.findByActivationCode(code);
+    public boolean activateUser(String code) {
+//        FIXME mail aint sending
+        User user = userRepository.findByEmail(code);
         if (user == null) return false;
         user.setActive(true);
         user.setActivationCode(null);

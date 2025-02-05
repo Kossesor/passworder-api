@@ -5,6 +5,7 @@ import com.myself.passworder.services.VaultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -14,18 +15,22 @@ public class VaultController {
     private final VaultService vaultService;
 
     @GetMapping("/{id}")
-    public List<Vault> SendVault(@PathVariable Long id) {
+    public List<Vault> GetVaults(@PathVariable Long id) {
         return vaultService.getVaultDataByParentId(id);
     }
 
-    @PostMapping("/{id}")
-    public List<Vault> SetVault(Vault data) {
-        return vaultService.setVaultData(data);
+    @DeleteMapping("/{id}")
+    public boolean DeleteVault(@PathVariable Long id) {
+        return vaultService.deleteVaultData(id);
+    }
+    @PatchMapping("/update")
+    public boolean SetVault(@RequestBody @Valid Vault vault) {
+        System.out.println(vault);
+        return vaultService.updateVaultData(vault);
     }
 
     @PostMapping("/create")
     public boolean CreateVault(@RequestBody Vault vault) {
-        System.out.println(vault);
         return vaultService.createVault(vault);
     }
 }
